@@ -80,6 +80,8 @@ Observa cómo cambia el mensaje de tu terminal ``(env)`` a cómo se veía antes.
 
 ¡Felicidades! Has logrado crear y usar correctamente un entorno virtual.
 
+captura de el codigo
+![image]https://github.com/rafaelsanchez23/IntroPythonKatasRafael/blob/main/imagenes/Captura0.PNG?raw=true
 
 Curso Propedútico de Python para Launch X - Innovacción Virtual.
 
