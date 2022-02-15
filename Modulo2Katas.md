@@ -75,7 +75,7 @@ Ejecuta el comando ``deactivate``:
 ```
 deactivate
 ```
-
+![image]https://github.com/rafaelsanchez23/IntroPythonKatasRafael/blob/main/imagenes/Captura0.PNG?raw=true
 Observa cómo cambia el mensaje de tu terminal ``(env)`` a cómo se veía antes.
 
 ¡Felicidades! Has logrado crear y usar correctamente un entorno virtual.
