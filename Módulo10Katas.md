@@ -61,6 +61,7 @@ Traceback (most recent call last):
     open("/path/to/mars.jpg")
 FileNotFoundError: [Errno 2] No such file or directory: '/path/to/mars.jpg'
 ```
+![image](https://github.com/rafaelsanchez23/IntroPythonKatasRafael/blob/main/imagenes/Captura.PNG?raw=true)
 La salida de error tiene más sentido ahora. Las rutas de acceso apuntan a un único archivo denominado *open.py*. La salida menciona que el error se inicia en la línea 5, que incluye la llamada a `main()`. A continuación, la salida sigue el error a la línea 2 en la llamada de función `open()`. Y, por último, `FileNotFoundError` notifica de nuevo que el archivo o el directorio no existen.
 
 Los tracebacks casi siempre incluyen la información siguiente:
@@ -89,7 +90,7 @@ Vamos a usar el ejemplo de navegador a fin de crear código que abra archivos de
 ...
 Couldn't find the config.txt file!
 ```
-
+![image](https://github.com/rafaelsanchez23/IntroPythonKatasRafael/blob/main/imagenes/Captura2.PNG?raw=true)
 Después de la palabra clave `try`, agregamos código que tenga la posibilidad de producir una excepción. A continuación, agregamos la palabra clave `except` junto con la posible excepción, seguida de cualquier código que deba ejecutarse cuando se produce esa condición. Puesto que config.txt no existe en el sistema, Python imprime que el archivo de configuración no está ahí. El bloque `try` y `except`, junto con un mensaje útil, evita un seguimiento y sigue informando al usuario sobre el problema.
 
 Aunque es común un archivo que no existe, no es el único error que podemos encontrar. Los permisos de archivo no válidos pueden impedir la lectura de un archivo, incluso si este existe. Vamos a crear un archivo de Python denominado config.py. El archivo tiene código que busca y lee el archivo de configuración del sistema de navegación:
@@ -105,6 +106,7 @@ def main():
 if __name__ == '__main__':
     main()
 ```
+![image](https://github.com/rafaelsanchez23/IntroPythonKatasRafael/blob/main/imagenes/Captura4.PNG?raw=true)
 A continuación, quita,ps el archivo *config.txt* y creamos un directorio denominado *config.txt*. Intentaremos llamar al archivo *config.py* para ver un error nuevo que debería ser similar al siguiente:
 ```
 $ python config.py
@@ -146,7 +148,7 @@ def main():
     except IsADirectoryError:
         print("Found config.txt but it is a directory, couldn't read it")
 ```
-
+![image](https://github.com/rafaelsanchez23/IntroPythonKatasRafael/blob/main/imagenes/Captura7.PNG?raw=true)
 Ahora volvemos a ejecutarlo, en el mismo lugar donde *config.txt* está con el problema de permisos:
 
 ```
@@ -159,6 +161,7 @@ $ rm -f config.txt
 $ python config.py
 Couldn't find the config.txt file!
 ```
+![image](https://github.com/rafaelsanchez23/IntroPythonKatasRafael/blob/main/imagenes/Captura8.PNG?raw=true)
 Cuando los errores son de una naturaleza similar y no es necesario controlarlos individualmente, puedes agrupar las excepciones como una usando paréntesis en la línea `except`. Por ejemplo, si el sistema de navegación está bajo cargas pesadas y el sistema de archivos está demasiado ocupado, tiene sentido detectar `BlockingIOError` y `TimeOutError` juntos:
 
 ```
@@ -224,6 +227,8 @@ PruProbemos con cinco astronautas, 100 litros de agua sobrante y dos días:
 >>> water_left(5, 100, 2)
 'Total water left after 2 days is: -10 liters'
 ```
+![image](https://user-images.githubusercontent.com/99106065/153976569-c2f74667-0509-4ccc-a66b-2a3aca981db9.png)
+
 Esto no es muy útil, ya que una carencia en los litros sería un error. Después, el sistema de navegación podría alertar a los astronautas que no habrá suficiente agua para todos en dos días. Si eres un ingeniero(a) que programa el sistema de navegación, podrías generar una excepción en la función water_left() para alertar de la condición de error:
 
 ```
@@ -243,6 +248,8 @@ Traceback (most recent call last):
   File "<stdin>", line 6, in water_left
 RuntimeError: There is not enough water for 5 astronauts after 2 days!
 ```
+![image](https://user-images.githubusercontent.com/99106065/153976681-e3eabd2f-0200-47ad-9e95-58a0e0c91ef9.png)
+
 En el sistema de navegación, el código para señalar la alerta ahora puede usar `RuntimeError` para generar la alerta:
 
 ```
@@ -260,6 +267,8 @@ Traceback (most recent call last):
   File "<stdin>", line 3, in water_left
 TypeError: can't multiply sequence by non-int of type 'NoneType'
 ```
+![image](https://user-images.githubusercontent.com/99106065/153976753-89b9bdc2-8846-4264-bf2f-086fef7bbf1e.png)
+
 El error de `TypeError` no es muy descriptivo en el contexto de lo que espera la función. Actualizaremos la función para que use `TypeError`, pero con un mensaje mejor:
 ```
 def water_left(astronauts, water_left, days_left):
@@ -292,6 +301,7 @@ Traceback (most recent call last):
   File "<stdin>", line 9, in water_left
 TypeError: All arguments must be of type int, but received: '3'
 ```
+![image](https://user-images.githubusercontent.com/99106065/153976805-fc91e543-9801-4190-8eea-23bb4f3e6430.png)
 
 ## Resumen
 Para ser un desarrollador eficaz, debes saber cómo funcionan las excepciones y cómo controlarlas. En este módulo, has descubierto cómo usar la salida de excepción para la depuración, cómo detectar y generar excepciones y, por último, cómo afecta a la lógica de un programa cuando se producen excepciones.
